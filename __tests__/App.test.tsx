@@ -1,17 +1,22 @@
-/**
- * @format
- */
-
-import 'react-native';
+import {render, fireEvent} from '@testing-library/react-native';
 import React from 'react';
 import App from '../App';
 
-// Note: import explicitly to use the types shipped with jest.
-import {it} from '@jest/globals';
+test('renders the UI correctly', () => {
+  const tree = render(<App />).toJSON();
+  expect(tree).toMatchSnapshot();
+});
 
-// Note: test renderer must be required after react-native.
-import renderer from 'react-test-renderer';
+test('Changing States', () => {
+  const {getByTestId, queryByTestId} = render(<App />);
 
-it('renders correctly', () => {
-  renderer.create(<App />);
+  const state = queryByTestId('State');
+
+  expect(state?.props.children).toBe('Initial State');
+
+  const button = getByTestId('MyCustomButton');
+
+  fireEvent.press(button);
+
+  expect(state?.props.children).toBe('Button Pressed');
 });
