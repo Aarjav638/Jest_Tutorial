@@ -16,6 +16,14 @@ buildscript {
         classpath("com.facebook.react:react-native-gradle-plugin")
         classpath("org.jetbrains.kotlin:kotlin-gradle-plugin")
     }
+    configurations.all {
+    resolutionStrategy {
+        
+        cacheDynamicVersionsFor 10, 'minutes'
+
+        cacheChangingModulesFor 24, 'hours'
+    }
+}
 }
 
 apply plugin: "com.facebook.react.rootproject"
