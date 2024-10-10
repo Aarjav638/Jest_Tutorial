@@ -1,5 +1,6 @@
-import {View, Text, FlatList, Image, StyleSheet} from 'react-native';
-import React, {useCallback, useEffect} from 'react';
+import {View, Text, FlatList, StyleSheet} from 'react-native';
+import React, {useCallback, useEffect, useRef} from 'react';
+import LazyImage from '../components/LazyImage';
 
 const Home = () => {
   const limit = 10;
@@ -8,9 +9,15 @@ const Home = () => {
   const [loading, setLoading] = React.useState(true);
   const [error, setError] = React.useState<unknown>(null);
   const [hasMore, setHasMore] = React.useState(true);
+  const isFetching = useRef(false);
 
   const fetchRecipes = useCallback(async () => {
+    if (isFetching.current || !hasMore) {
+      return;
+    }
+    isFetching.current = true;
     console.log('fetching recipes');
+    setLoading(true);
     try {
       const response = await fetch(
         `https://dummyjson.com/recipes?limit=${limit}&skip=${skip}`,
@@ -25,14 +32,14 @@ const Home = () => {
       }
     } finally {
       setLoading(false);
+      isFetching.current = false;
     }
-  }, [skip]);
+  }, [skip, hasMore]);
 
   useEffect(() => {
-    if (skip === 0) {
-      fetchRecipes();
-    }
-  }, [fetchRecipes, skip]);
+    fetchRecipes();
+  }, [fetchRecipes]);
+
   const renderItem = useCallback(
     ({
       item,
@@ -47,22 +54,34 @@ const Home = () => {
     [],
   );
 
+  const handleEndReached = useCallback(() => {
+    if (!loading && hasMore) {
+      setTimeout(() => {
+        fetchRecipes();
+      }, 500);
+    }
+  }, [loading, hasMore, fetchRecipes]);
+
   if (error) {
     return <Text>{String(error)}</Text>;
   }
 
   return (
     <View>
-      {loading ? (
-        <Sketeleton />
+      {loading && skip === 0 ? (
+        <Skeleton />
       ) : (
         <FlatList
           data={recipes}
           keyExtractor={item => item.id}
           renderItem={renderItem}
-          onEndReachedThreshold={0.3}
-          onEndReached={hasMore ? fetchRecipes : undefined}
-          ListFooterComponent={hasMore ? <Sketeleton /> : null}
+          onEndReachedThreshold={0.5}
+          onEndReached={handleEndReached}
+          ListFooterComponent={hasMore ? <Skeleton /> : null}
+          initialNumToRender={5}
+          maxToRenderPerBatch={5}
+          windowSize={10}
+          removeClippedSubviews={true}
         />
       )}
     </View>
@@ -79,15 +98,15 @@ const styles = StyleSheet.create({
   skeletonContainer: {
     gap: 10,
     marginBottom: 10,
-    justifyContent: 'center',
-    flexDirection: 'column',
+    padding: 10,
+    justifyContent: 'space-between',
     flex: 1,
-    height: 'auto',
   },
   skeletonChildContainer: {
     flexDirection: 'row',
     columnGap: 10,
     alignItems: 'center',
+    padding: 10,
   },
   skeletonChildText: {
     padding: 8,
@@ -99,10 +118,16 @@ const styles = StyleSheet.create({
     width: '80%',
     backgroundColor: 'grey',
   },
-  skeletonImage: {padding: 100, width: '60%', backgroundColor: 'grey'},
+  skeletonImage: {
+    padding: 100,
+    margin: 10,
+    width: '60%',
+    backgroundColor: 'grey',
+  },
   image: {
     width: '80%',
     height: 250,
+    padding: 10,
     alignSelf: 'center',
     marginBottom: '4%',
     objectFit: 'contain',
@@ -113,51 +138,46 @@ const styles = StyleSheet.create({
   ingredientContainer: {flexDirection: 'row', marginBottom: '4%'},
 });
 
-const Sketeleton = () => {
+const Skeleton = () => {
   return (
-    <FlatList
-      data={Array.from({length: 1})}
-      keyExtractor={(_, index) => index.toString()}
-      renderItem={renderSkeleton}
-    />
+    <View style={styles.skeletonContainer}>
+      <View style={styles.skeletonChildContainer}>
+        <View style={styles.skeletonChildText} />
+        <View style={styles.skeletonChildText2} />
+      </View>
+      <View style={styles.skeletonImage} />
+    </View>
   );
 };
-const renderSkeleton = () => (
-  <View style={styles.skeletonContainer}>
-    <View style={styles.skeletonChildContainer}>
-      <View style={styles.skeletonChildText} />
 
-      <View style={styles.skeletonChildText2} />
-    </View>
-    <View style={styles.skeletonImage} />
-  </View>
-);
-const Item = ({
-  item,
-}: {
-  item: {
-    id: string;
-    name: string;
-    image: string;
-    ingredients: string[];
-  };
-}) => (
-  <View style={styles.flatlistContainer}>
-    <View style={styles.flatlistChild}>
-      <Text>{item.id}.</Text>
-      <Text>{item.name}</Text>
-    </View>
-    {item.image ? (
-      <Image source={{uri: item.image}} style={styles.image} />
-    ) : (
-      <Text>Loading</Text>
-    )}
-    <Text style={styles.flatlistText}> Ingredients Required </Text>
-    {item.ingredients.map((ingredient: string, index: number) => (
-      <View key={index} style={styles.ingredientContainer}>
-        <Text>{index + 1}</Text>
-        <Text>{ingredient}</Text>
+const Item = React.memo(
+  ({
+    item,
+  }: {
+    item: {
+      id: string;
+      name: string;
+      image: string;
+      ingredients: string[];
+    };
+  }) => (
+    <View style={styles.flatlistContainer}>
+      <View style={styles.flatlistChild}>
+        <Text>{item.id}.</Text>
+        <Text>{item.name}</Text>
       </View>
-    ))}
-  </View>
+      {item.image ? (
+        <LazyImage uri={item.image} style={styles.image} />
+      ) : (
+        <Text>Image Not Available</Text>
+      )}
+      <Text style={styles.flatlistText}> Ingredients Required </Text>
+      {item.ingredients.map((ingredient: string, index: number) => (
+        <View key={index} style={styles.ingredientContainer}>
+          <Text>{index + 1}</Text>
+          <Text>{ingredient}</Text>
+        </View>
+      ))}
+    </View>
+  ),
 );
