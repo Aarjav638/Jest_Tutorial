@@ -1,0 +1,600 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders the UI correctly 1`] = `
+<View>
+  <RCTScrollView
+    data={
+      [
+        undefined,
+        undefined,
+        undefined,
+        undefined,
+        undefined,
+        undefined,
+        undefined,
+        undefined,
+        undefined,
+        undefined,
+      ]
+    }
+    getItem={[Function]}
+    getItemCount={[Function]}
+    keyExtractor={[Function]}
+    onContentSizeChange={[Function]}
+    onLayout={[Function]}
+    onMomentumScrollBegin={[Function]}
+    onMomentumScrollEnd={[Function]}
+    onScroll={[Function]}
+    onScrollBeginDrag={[Function]}
+    onScrollEndDrag={[Function]}
+    removeClippedSubviews={false}
+    renderItem={[Function]}
+    scrollEventThrottle={0.0001}
+    stickyHeaderIndices={[]}
+    viewabilityConfigCallbackPairs={[]}
+  >
+    <View>
+      <View
+        onFocusCapture={[Function]}
+        onLayout={[Function]}
+        style={null}
+      >
+        <View
+          style={
+            {
+              "flex": 1,
+              "flexDirection": "column",
+              "gap": 10,
+              "height": "auto",
+              "justifyContent": "center",
+              "marginBottom": 10,
+            }
+          }
+        >
+          <View
+            style={
+              {
+                "alignItems": "center",
+                "columnGap": 10,
+                "flexDirection": "row",
+              }
+            }
+          >
+            <View
+              style={
+                {
+                  "backgroundColor": "grey",
+                  "padding": 8,
+                  "width": "10%",
+                }
+              }
+            />
+            <View
+              style={
+                {
+                  "backgroundColor": "grey",
+                  "padding": 8,
+                  "width": "80%",
+                }
+              }
+            />
+          </View>
+          <View
+            style={
+              {
+                "backgroundColor": "grey",
+                "padding": 100,
+                "width": "60%",
+              }
+            }
+          />
+        </View>
+      </View>
+      <View
+        onFocusCapture={[Function]}
+        onLayout={[Function]}
+        style={null}
+      >
+        <View
+          style={
+            {
+              "flex": 1,
+              "flexDirection": "column",
+              "gap": 10,
+              "height": "auto",
+              "justifyContent": "center",
+              "marginBottom": 10,
+            }
+          }
+        >
+          <View
+            style={
+              {
+                "alignItems": "center",
+                "columnGap": 10,
+                "flexDirection": "row",
+              }
+            }
+          >
+            <View
+              style={
+                {
+                  "backgroundColor": "grey",
+                  "padding": 8,
+                  "width": "10%",
+                }
+              }
+            />
+            <View
+              style={
+                {
+                  "backgroundColor": "grey",
+                  "padding": 8,
+                  "width": "80%",
+                }
+              }
+            />
+          </View>
+          <View
+            style={
+              {
+                "backgroundColor": "grey",
+                "padding": 100,
+                "width": "60%",
+              }
+            }
+          />
+        </View>
+      </View>
+      <View
+        onFocusCapture={[Function]}
+        onLayout={[Function]}
+        style={null}
+      >
+        <View
+          style={
+            {
+              "flex": 1,
+              "flexDirection": "column",
+              "gap": 10,
+              "height": "auto",
+              "justifyContent": "center",
+              "marginBottom": 10,
+            }
+          }
+        >
+          <View
+            style={
+              {
+                "alignItems": "center",
+                "columnGap": 10,
+                "flexDirection": "row",
+              }
+            }
+          >
+            <View
+              style={
+                {
+                  "backgroundColor": "grey",
+                  "padding": 8,
+                  "width": "10%",
+                }
+              }
+            />
+            <View
+              style={
+                {
+                  "backgroundColor": "grey",
+                  "padding": 8,
+                  "width": "80%",
+                }
+              }
+            />
+          </View>
+          <View
+            style={
+              {
+                "backgroundColor": "grey",
+                "padding": 100,
+                "width": "60%",
+              }
+            }
+          />
+        </View>
+      </View>
+      <View
+        onFocusCapture={[Function]}
+        onLayout={[Function]}
+        style={null}
+      >
+        <View
+          style={
+            {
+              "flex": 1,
+              "flexDirection": "column",
+              "gap": 10,
+              "height": "auto",
+              "justifyContent": "center",
+              "marginBottom": 10,
+            }
+          }
+        >
+          <View
+            style={
+              {
+                "alignItems": "center",
+                "columnGap": 10,
+                "flexDirection": "row",
+              }
+            }
+          >
+            <View
+              style={
+                {
+                  "backgroundColor": "grey",
+                  "padding": 8,
+                  "width": "10%",
+                }
+              }
+            />
+            <View
+              style={
+                {
+                  "backgroundColor": "grey",
+                  "padding": 8,
+                  "width": "80%",
+                }
+              }
+            />
+          </View>
+          <View
+            style={
+              {
+                "backgroundColor": "grey",
+                "padding": 100,
+                "width": "60%",
+              }
+            }
+          />
+        </View>
+      </View>
+      <View
+        onFocusCapture={[Function]}
+        onLayout={[Function]}
+        style={null}
+      >
+        <View
+          style={
+            {
+              "flex": 1,
+              "flexDirection": "column",
+              "gap": 10,
+              "height": "auto",
+              "justifyContent": "center",
+              "marginBottom": 10,
+            }
+          }
+        >
+          <View
+            style={
+              {
+                "alignItems": "center",
+                "columnGap": 10,
+                "flexDirection": "row",
+              }
+            }
+          >
+            <View
+              style={
+                {
+                  "backgroundColor": "grey",
+                  "padding": 8,
+                  "width": "10%",
+                }
+              }
+            />
+            <View
+              style={
+                {
+                  "backgroundColor": "grey",
+                  "padding": 8,
+                  "width": "80%",
+                }
+              }
+            />
+          </View>
+          <View
+            style={
+              {
+                "backgroundColor": "grey",
+                "padding": 100,
+                "width": "60%",
+              }
+            }
+          />
+        </View>
+      </View>
+      <View
+        onFocusCapture={[Function]}
+        onLayout={[Function]}
+        style={null}
+      >
+        <View
+          style={
+            {
+              "flex": 1,
+              "flexDirection": "column",
+              "gap": 10,
+              "height": "auto",
+              "justifyContent": "center",
+              "marginBottom": 10,
+            }
+          }
+        >
+          <View
+            style={
+              {
+                "alignItems": "center",
+                "columnGap": 10,
+                "flexDirection": "row",
+              }
+            }
+          >
+            <View
+              style={
+                {
+                  "backgroundColor": "grey",
+                  "padding": 8,
+                  "width": "10%",
+                }
+              }
+            />
+            <View
+              style={
+                {
+                  "backgroundColor": "grey",
+                  "padding": 8,
+                  "width": "80%",
+                }
+              }
+            />
+          </View>
+          <View
+            style={
+              {
+                "backgroundColor": "grey",
+                "padding": 100,
+                "width": "60%",
+              }
+            }
+          />
+        </View>
+      </View>
+      <View
+        onFocusCapture={[Function]}
+        onLayout={[Function]}
+        style={null}
+      >
+        <View
+          style={
+            {
+              "flex": 1,
+              "flexDirection": "column",
+              "gap": 10,
+              "height": "auto",
+              "justifyContent": "center",
+              "marginBottom": 10,
+            }
+          }
+        >
+          <View
+            style={
+              {
+                "alignItems": "center",
+                "columnGap": 10,
+                "flexDirection": "row",
+              }
+            }
+          >
+            <View
+              style={
+                {
+                  "backgroundColor": "grey",
+                  "padding": 8,
+                  "width": "10%",
+                }
+              }
+            />
+            <View
+              style={
+                {
+                  "backgroundColor": "grey",
+                  "padding": 8,
+                  "width": "80%",
+                }
+              }
+            />
+          </View>
+          <View
+            style={
+              {
+                "backgroundColor": "grey",
+                "padding": 100,
+                "width": "60%",
+              }
+            }
+          />
+        </View>
+      </View>
+      <View
+        onFocusCapture={[Function]}
+        onLayout={[Function]}
+        style={null}
+      >
+        <View
+          style={
+            {
+              "flex": 1,
+              "flexDirection": "column",
+              "gap": 10,
+              "height": "auto",
+              "justifyContent": "center",
+              "marginBottom": 10,
+            }
+          }
+        >
+          <View
+            style={
+              {
+                "alignItems": "center",
+                "columnGap": 10,
+                "flexDirection": "row",
+              }
+            }
+          >
+            <View
+              style={
+                {
+                  "backgroundColor": "grey",
+                  "padding": 8,
+                  "width": "10%",
+                }
+              }
+            />
+            <View
+              style={
+                {
+                  "backgroundColor": "grey",
+                  "padding": 8,
+                  "width": "80%",
+                }
+              }
+            />
+          </View>
+          <View
+            style={
+              {
+                "backgroundColor": "grey",
+                "padding": 100,
+                "width": "60%",
+              }
+            }
+          />
+        </View>
+      </View>
+      <View
+        onFocusCapture={[Function]}
+        onLayout={[Function]}
+        style={null}
+      >
+        <View
+          style={
+            {
+              "flex": 1,
+              "flexDirection": "column",
+              "gap": 10,
+              "height": "auto",
+              "justifyContent": "center",
+              "marginBottom": 10,
+            }
+          }
+        >
+          <View
+            style={
+              {
+                "alignItems": "center",
+                "columnGap": 10,
+                "flexDirection": "row",
+              }
+            }
+          >
+            <View
+              style={
+                {
+                  "backgroundColor": "grey",
+                  "padding": 8,
+                  "width": "10%",
+                }
+              }
+            />
+            <View
+              style={
+                {
+                  "backgroundColor": "grey",
+                  "padding": 8,
+                  "width": "80%",
+                }
+              }
+            />
+          </View>
+          <View
+            style={
+              {
+                "backgroundColor": "grey",
+                "padding": 100,
+                "width": "60%",
+              }
+            }
+          />
+        </View>
+      </View>
+      <View
+        onFocusCapture={[Function]}
+        onLayout={[Function]}
+        style={null}
+      >
+        <View
+          style={
+            {
+              "flex": 1,
+              "flexDirection": "column",
+              "gap": 10,
+              "height": "auto",
+              "justifyContent": "center",
+              "marginBottom": 10,
+            }
+          }
+        >
+          <View
+            style={
+              {
+                "alignItems": "center",
+                "columnGap": 10,
+                "flexDirection": "row",
+              }
+            }
+          >
+            <View
+              style={
+                {
+                  "backgroundColor": "grey",
+                  "padding": 8,
+                  "width": "10%",
+                }
+              }
+            />
+            <View
+              style={
+                {
+                  "backgroundColor": "grey",
+                  "padding": 8,
+                  "width": "80%",
+                }
+              }
+            />
+          </View>
+          <View
+            style={
+              {
+                "backgroundColor": "grey",
+                "padding": 100,
+                "width": "60%",
+              }
+            }
+          />
+        </View>
+      </View>
+    </View>
+  </RCTScrollView>
+</View>
+`;

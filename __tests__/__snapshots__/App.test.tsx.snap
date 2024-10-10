@@ -1,7 +1,16 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`renders the UI correctly 1`] = `
-<View>
+<View
+  style={
+    {
+      "alignItems": "center",
+      "flex": 1,
+      "gap": 10,
+      "justifyContent": "center",
+    }
+  }
+>
   <Text>
     Testing App
   </Text>
@@ -35,7 +44,14 @@ exports[`renders the UI correctly 1`] = `
     onStartShouldSetResponder={[Function]}
     style={
       {
+        "alignItems": "center",
+        "backgroundColor": "#666fff",
+        "borderRadius": 10,
+        "elevation": 5,
+        "justifyContent": "center",
         "opacity": 1,
+        "padding": 10,
+        "width": "80%",
       }
     }
     testID="MyCustomButton"
