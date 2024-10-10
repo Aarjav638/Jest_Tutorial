@@ -1,4 +1,4 @@
-import {Text, TouchableOpacity} from 'react-native';
+import {StyleSheet, Text, TouchableOpacity} from 'react-native';
 import React from 'react';
 
 type CustomButtonProps = {
@@ -8,10 +8,25 @@ type CustomButtonProps = {
 
 const CustomButton = ({onPress, label}: CustomButtonProps) => {
   return (
-    <TouchableOpacity onPress={onPress} testID="MyCustomButton">
+    <TouchableOpacity
+      style={styles.container}
+      onPress={onPress}
+      testID="MyCustomButton">
       <Text>{label}</Text>
     </TouchableOpacity>
   );
 };
+
+const styles = StyleSheet.create({
+  container: {
+    borderRadius: 10,
+    elevation: 5,
+    width: '80%',
+    padding: 10,
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: '#666fff',
+  },
+});
 
 export default CustomButton;
