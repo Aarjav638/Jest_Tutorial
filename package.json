@@ -1,6 +1,6 @@
 {
   "name": "jest",
-  "version": "0.0.7",
+  "version": "0.0.9",
   "private": true,
   "scripts": {
     "android": "react-native run-android",
@@ -12,7 +12,8 @@
     "prepare": "husky",
     "postversion": "cd android && gradlew bundleRelease",
     "prebuild": "npm version patch --no-git-tag-version",
-    "build": "yarn prebuild"
+    "build": "yarn prebuild",
+    "android:beta": "fastlane android beta"
   },
   "dependencies": {
     "@react-navigation/native": "^6.1.18",
