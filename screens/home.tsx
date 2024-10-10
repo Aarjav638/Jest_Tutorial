@@ -116,7 +116,7 @@ const styles = StyleSheet.create({
 const Sketeleton = () => {
   return (
     <FlatList
-      data={Array.from({length: 10})}
+      data={Array.from({length: 1})}
       keyExtractor={(_, index) => index.toString()}
       renderItem={renderSkeleton}
     />
